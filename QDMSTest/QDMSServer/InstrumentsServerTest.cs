@@ -13,6 +13,7 @@ using System.Xml.Serialization;
 using EntityData;
 using MetaLinq;
 using Moq;
+using NetMQ;
 using NUnit.Framework;
 using QDMS;
 using QDMSServer;
@@ -56,6 +57,8 @@ namespace QDMSTest
             _rtdServer.Dispose();
 
             _client.Dispose();
+
+            NetMQConfig.Cleanup();
         }
 
         [Test]

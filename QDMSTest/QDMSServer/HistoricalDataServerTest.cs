@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Moq;
+using NetMQ;
 using NUnit.Framework;
 using QDMS;
 using QDMSServer;
@@ -46,6 +47,7 @@ namespace QDMSTest
             _client?.Dispose();
             _hdServer?.Dispose();
             _rtServer?.Dispose();
+            NetMQConfig.Cleanup();
         }
 
         [Test]

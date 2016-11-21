@@ -6,13 +6,10 @@
 
 using System;
 using System.Threading;
-
 using Moq;
-
+using NetMQ;
 using NUnit.Framework;
-
 using QDMS;
-
 using QDMSServer;
 
 namespace QDMSTest
@@ -43,8 +40,9 @@ namespace QDMSTest
         {
             _client.Dispose();
             _rtServer.Dispose();
+            NetMQConfig.Cleanup();
         }
-
+        
         [Test]
         public void ServerCorrectlyForwardsRealTimeDataRequestsToBroker()
         {
